@@ -6,7 +6,7 @@ const data = process.env.KEY_JSON;
 const jsonCredential = JSON.parse(data);
 
 const storage = new Storage({
-    keyFilename:path.join(__dirname ,jsonCredential),
+    keyFilename:jsonCredential,
     projectId:"mosiqa-player"
 });
 
