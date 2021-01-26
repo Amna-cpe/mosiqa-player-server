@@ -2,6 +2,7 @@ const express = require("express");
 const bodyparser = require("body-parser");
 const app = express();
 const cors = require("cors");
+const PORT = process.env.PORT || 4000;
 
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(cors());
@@ -48,6 +49,6 @@ app.post("/likeSong/:songId", Auth,likeSong);
 app.post("/upload", Auth , upload.single("audio"), uploadSong);
 
 
-app.listen(4000, () => {
+app.listen(PORT, () => {
   console.log("serving at port 4000");
 });
